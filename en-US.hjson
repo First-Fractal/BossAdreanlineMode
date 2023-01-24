@@ -1,0 +1,18 @@
+﻿Mods: {
+	BossAdreanlineMode: {
+		Config: {
+			Label: "Config"
+			Header: {
+				GeneralOptions: "General Options"
+			}
+			AdreanlineMulti: {
+				Label: "Adreanline multiplier"
+				Tooltip: "Change how much speed does adrealine affects the boss."
+			}
+			AdreanlineCooldown: {
+				Label: "Adreanline Cooldown"
+				Tooltip: "Change the cooldown of when adreanline is in effect, in seconds."
+			}
+		}
+	}
+}

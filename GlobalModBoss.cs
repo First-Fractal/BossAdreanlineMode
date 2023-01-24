@@ -30,7 +30,7 @@ namespace BossAdreanlineMode
 
                 if (speed)
                 {
-                    npc.position += npc.velocity * 1.5f;
+                    npc.position += npc.velocity * BossConfig.Instance.AdreanlineMulti;
                 }
             }
             base.PostAI(npc);
