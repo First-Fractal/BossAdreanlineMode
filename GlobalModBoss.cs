@@ -35,5 +35,22 @@ namespace BossAdreanlineMode
             }
             base.PostAI(npc);
         }
+
+        public override void OnKill(NPC npc)
+        {
+            if (npc.boss)
+            {
+                ModContent.GetInstance<BossAdreanlineSystem>().boss = true;
+            }
+
+            foreach (int bossPart in BossParts)
+            {
+                if (npc.type == bossPart)
+                {
+                    ModContent.GetInstance<BossAdreanlineSystem>().boss = true;
+                }
+            }
+            base.OnKill(npc);
+        }
     }
 }

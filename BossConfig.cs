@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria.ModLoader.Config;
 
 namespace BossAdreanlineMode
@@ -28,5 +24,17 @@ namespace BossAdreanlineMode
         [DefaultValue(1.5f)]
         [Range(0f, 3f)]
         public float AdreanlineMulti;
+
+        [Label("$Mods.BossAdreanlineMode.Config.AdreanlineBarX.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineBarX.Tooltip")]
+        [DefaultValue(800)]
+        [Range(0f, 1660f)]
+        public float AdreanlineBarX;
+
+        [Label("$Mods.BossAdreanlineMode.Config.AdreanlineBarY.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineBarY.Tooltip")]
+        [DefaultValue(22f)]
+        [Range(0f, 900f)]
+        public float AdreanlineBarY;
     }
 }

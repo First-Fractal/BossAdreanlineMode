@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Terraria.Localization;
 
 namespace BossAdreanlineMode
 {
@@ -11,10 +12,10 @@ namespace BossAdreanlineMode
         public int counter = 0;
         public int adreanlineCounter = 0;
         public int adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
+        public bool boss = false;
         public void toggleAdreanline()
         {
             adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
-            bool boss = false;
             for (int i = 0; i < Main.npc.Length; i++)
             {
                 if (Main.npc[i].boss == true && Main.npc[i].active == true)
@@ -29,14 +30,19 @@ namespace BossAdreanlineMode
                 if (counter >= 60)
                 {
                     adreanlineCounter++;
-                    Main.NewText(adreanlineCounter.ToString(), Color.SeaShell);
                     counter = 0;
                 }
 
                 if (adreanlineCounter >= adreanlineCounterMax)
                 {
                     adreanline = !adreanline;
-                    Main.NewText("The adrealine is at " + adreanline.ToString(), Color.Red);
+                    if (adreanline == true)
+                    {
+                        Main.NewText(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineEnabled"), new Color(255, 0, 0));
+                    } else
+                    {
+                        Main.NewText(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineDisabled"), new Color(0, 225, 0));
+                    }
                     adreanlineCounter = 0;
                 }
             }
