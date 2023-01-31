@@ -1,1 +1,1 @@
-Boss Adreanline Mode is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Boss Adreanline Mode is a simple mod that makes bosses move fast every couple of seconds. Everything about this mod that u need to tweak is configurable.

@@ -16,6 +16,7 @@ namespace BossAdreanlineMode
         public void toggleAdreanline()
         {
             adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
+            boss = false;
             for (int i = 0; i < Main.npc.Length; i++)
             {
                 if (Main.npc[i].boss == true && Main.npc[i].active == true)
@@ -33,7 +34,7 @@ namespace BossAdreanlineMode
                     counter = 0;
                 }
 
-                if (adreanlineCounter >= adreanlineCounterMax)
+                if (adreanlineCounter > adreanlineCounterMax)
                 {
                     adreanline = !adreanline;
                     if (adreanline == true)
