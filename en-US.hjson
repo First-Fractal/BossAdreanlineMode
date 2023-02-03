@@ -13,7 +13,13 @@
 				Label: "Adreanline Cooldown"
 				Tooltip: "Change the cooldown of when adreanline is in effect, in seconds."
 			}
+		}
 
+		BossGUI: {
+			Label: "GUI Config"
+			Header: {
+				GeneralOptions: "GUI Options"
+			}
 			AdreanlineBarX: {
 				Label: "Adreanline Bar X"
 				Tooltip: "Set the X position of the adreanline bar."

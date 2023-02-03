@@ -24,15 +24,25 @@ namespace BossAdreanlineMode
         [DefaultValue(1.5f)]
         [Range(1f, 3f)]
         public float AdreanlineMulti;
+    }
 
-        [Label("$Mods.BossAdreanlineMode.Config.AdreanlineBarX.Label")]
-        [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineBarX.Tooltip")]
+    [Label("$Mods.BossAdreanlineMode.BossGUI.Label")]
+    public class BossGUIConfig : ModConfig 
+    {
+        public override ConfigScope Mode => ConfigScope.ClientSide;
+        // Automatically set by tModLoader
+        public static BossGUIConfig Instance;
+
+        [Header("$Mods.BossAdreanlineMode.BossGUI.Header.GeneralOptions")]
+
+        [Label("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarX.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarX.Tooltip")]
         [DefaultValue(800)]
         [Range(0f, 1660f)]
         public float AdreanlineBarX;
 
-        [Label("$Mods.BossAdreanlineMode.Config.AdreanlineBarY.Label")]
-        [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineBarY.Tooltip")]
+        [Label("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarY.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarY.Tooltip")]
         [DefaultValue(22f)]
         [Range(0f, 900f)]
         public float AdreanlineBarY;

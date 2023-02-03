@@ -1,8 +1,9 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.Chat;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
 using Terraria.Localization;
+using Microsoft.Xna.Framework;
 
 namespace BossAdreanlineMode
 {
@@ -13,6 +14,19 @@ namespace BossAdreanlineMode
         public int adreanlineCounter = 0;
         public int adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
         public bool boss = false;
+
+        public void Talk(string message, Color color)
+        {
+            if (Main.netMode == NetmodeID.SinglePlayer)
+            {
+                Main.NewText(message, color);
+            }
+            else
+            {
+                ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(message), color);
+            }
+        }
+
         public void toggleAdreanline()
         {
             adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
@@ -39,10 +53,10 @@ namespace BossAdreanlineMode
                     adreanline = !adreanline;
                     if (adreanline == true)
                     {
-                        Main.NewText(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineEnabled"), new Color(255, 0, 0));
+                        Talk(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineEnabled"), new Color(255, 0, 0));
                     } else
                     {
-                        Main.NewText(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineDisabled"), new Color(0, 225, 0));
+                        Talk(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineDisabled"), new Color(0, 225, 0));
                     }
                     adreanlineCounter = 0;
                 }
