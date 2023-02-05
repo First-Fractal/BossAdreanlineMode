@@ -5,29 +5,17 @@
 			Header: {
 				GeneralOptions: "General Options"
 			}
+			AdreanlineCooldown: {
+				Label: "Adreanline Cooldown"
+				Tooltip: "change low long it will take to adreanline to kick in, in seconds."
+			}
+			AdreanlineDuration: {
+				Label: "Adreanline Duration"
+				Tooltip: "Change how long the adreanline is in effect, in seconds."
+			}
 			AdreanlineMulti: {
 				Label: "Adreanline multiplier"
 				Tooltip: "Change how much speed does adrealine affects the boss."
-			}
-			AdreanlineCooldown: {
-				Label: "Adreanline Cooldown"
-				Tooltip: "Change the cooldown of when adreanline is in effect, in seconds."
-			}
-		}
-
-		BossGUI: {
-			Label: "GUI Config"
-			Header: {
-				GeneralOptions: "GUI Options"
-			}
-			AdreanlineBarX: {
-				Label: "Adreanline Bar X"
-				Tooltip: "Set the X position of the adreanline bar."
-			}
-
-			AdreanlineBarY: {
-				Label: "Adreanline Bar Y"
-				Tooltip: "Set the Y position of the adreanline bar."
 			}
 		}
 

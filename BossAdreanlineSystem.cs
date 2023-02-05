@@ -29,7 +29,15 @@ namespace BossAdreanlineMode
 
         public void toggleAdreanline()
         {
-            adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
+            if (adreanline)
+            {
+                adreanlineCounterMax = BossConfig.Instance.AdreanlineDuration;
+            } else
+            {
+                adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
+            }
+
+
             boss = false;
             for (int i = 0; i < Main.npc.Length; i++)
             {
@@ -50,13 +58,16 @@ namespace BossAdreanlineMode
 
                 if (adreanlineCounter > adreanlineCounterMax)
                 {
-                    adreanline = !adreanline;
-                    if (adreanline == true)
+                    if (adreanline == false)
                     {
                         Talk(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineEnabled"), new Color(255, 0, 0));
+                        adreanline = true;
+                        adreanlineCounterMax = BossConfig.Instance.AdreanlineDuration;
                     } else
                     {
                         Talk(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineDisabled"), new Color(0, 225, 0));
+                        adreanline = false;
+                        adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
                     }
                     adreanlineCounter = 0;
                 }
@@ -69,24 +80,9 @@ namespace BossAdreanlineMode
             }
         }
 
-
-        //spawn in the npcs for the server
-        public override void PostUpdateEverything()
-        {
-            if (Main.netMode == NetmodeID.Server)
-            {
-                toggleAdreanline();
-            }
-            base.PostUpdateEverything();
-        }
-
-        //spawn in the npcs for singleplayer
         public override void PostUpdateWorld()
         {
-            if (Main.netMode == NetmodeID.SinglePlayer)
-            {
-                toggleAdreanline();
-            }
+            toggleAdreanline();
             base.PostUpdateWorld();
         }
     }

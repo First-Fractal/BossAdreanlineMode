@@ -19,32 +19,15 @@ namespace BossAdreanlineMode
         [DefaultValue(20)]
         public int AdreanlineCooldown;
 
+        [Label("$Mods.BossAdreanlineMode.Config.AdreanlineDuration.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineDuration.Tooltip")]
+        [DefaultValue(20)]
+        public int AdreanlineDuration;
+
         [Label("$Mods.BossAdreanlineMode.Config.AdreanlineMulti.Label")]
         [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineMulti.Tooltip")]
         [DefaultValue(1.5f)]
         [Range(1f, 3f)]
         public float AdreanlineMulti;
-    }
-
-    [Label("$Mods.BossAdreanlineMode.BossGUI.Label")]
-    public class BossGUIConfig : ModConfig 
-    {
-        public override ConfigScope Mode => ConfigScope.ClientSide;
-        // Automatically set by tModLoader
-        public static BossGUIConfig Instance;
-
-        [Header("$Mods.BossAdreanlineMode.BossGUI.Header.GeneralOptions")]
-
-        [Label("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarX.Label")]
-        [Tooltip("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarX.Tooltip")]
-        [DefaultValue(800)]
-        [Range(0f, 1660f)]
-        public float AdreanlineBarX;
-
-        [Label("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarY.Label")]
-        [Tooltip("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarY.Tooltip")]
-        [DefaultValue(22f)]
-        [Range(0f, 900f)]
-        public float AdreanlineBarY;
     }
 }
