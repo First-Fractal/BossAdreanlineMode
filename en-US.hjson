@@ -1,29 +1,29 @@
-﻿Mods: {
+
+Mods: {
 	BossAdreanlineMode: {
 		Config: {
-			Label: "Config"
-			Header: {
-				GeneralOptions: "General Options"
-			}
+			Label: Config
+			Header.GeneralOptions: General Options
+
 			AdreanlineCooldown: {
-				Label: "Adreanline Cooldown"
-				Tooltip: "change low long it will take to adreanline to kick in, in seconds."
+				Label: Adreanline Cooldown
+				Tooltip: change low long it will take to adreanline to kick in, in seconds.
 			}
+
 			AdreanlineDuration: {
-				Label: "Adreanline Duration"
-				Tooltip: "Change how long the adreanline is in effect, in seconds."
+				Label: Adreanline Duration
+				Tooltip: Change how long the adreanline is in effect, in seconds.
 			}
+
 			AdreanlineMulti: {
-				Label: "Adreanline multiplier"
-				Tooltip: "Change how much speed does adrealine affects the boss."
+				Label: Adreanline multiplier
+				Tooltip: Change how much speed does adrealine affects the boss.
 			}
 		}
 
-		Chat:
-		{
-			AdreanlineEnabled: "The adrealine has been enabled."
-			AdreanlineDisabled: "The adrealine has been disabled."
+		Chat: {
+			AdreanlineEnabled: The adrealine has been enabled.
+			AdreanlineDisabled: The adrealine has been disabled.
 		}
-
 	}
 }
