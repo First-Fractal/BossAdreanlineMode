@@ -14,6 +14,7 @@ namespace BossAdreanlineMode
         public int adreanlineCounter = 0;
         public int adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
         public bool boss = false;
+        public int[] BossParts = { NPCID.EaterofWorldsHead, NPCID.EaterofWorldsBody, NPCID.EaterofWorldsTail, NPCID.Creeper, NPCID.SkeletronHand, NPCID.SkeletronHead, NPCID.WallofFleshEye, NPCID.TheDestroyer, NPCID.TheDestroyerBody, NPCID.TheDestroyerTail, NPCID.Probe, NPCID.PrimeCannon, NPCID.PrimeLaser, NPCID.PrimeSaw, NPCID.PrimeVice, NPCID.PlanterasHook, NPCID.PlanterasTentacle, NPCID.GolemFistLeft, NPCID.GolemFistRight, NPCID.GolemHead, NPCID.GolemHeadFree, NPCID.CultistTablet, NPCID.CultistBossClone, NPCID.MoonLordCore, NPCID.MoonLordHand, NPCID.MoonLordHead, NPCID.MoonLordFreeEye, NPCID.MoonLordLeechBlob };
 
         public void Talk(string message, Color color)
         {
@@ -41,9 +42,17 @@ namespace BossAdreanlineMode
             boss = false;
             for (int i = 0; i < Main.npc.Length; i++)
             {
-                if (Main.npc[i].boss == true && Main.npc[i].active == true)
+                if (Main.npc[i].boss && Main.npc[i].active == true)
                 {
                     boss = true;
+                }
+
+                foreach (int bossPart in BossParts)
+                {
+                    if (Main.npc[i].type == bossPart && Main.npc[i].active == true)
+                    {
+                        boss = true;
+                    }
                 }
             }
 
