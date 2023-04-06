@@ -9,6 +9,7 @@ If you are a Terraria Content Creator that is going to use this mod, please give
 [Download it here](https://steamcommunity.com/sharedfiles/filedetails/?id=2952321754)
 
 # Change Log
+v 1.2: Removed an npc that was falsely labed as a boss part. 
 v 1.1:
 Fixed a bug where the boss parts were not affected by adrenaline. 
 v 1.0:
