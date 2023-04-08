@@ -3,9 +3,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
-namespace BossAdreanlineMode
+namespace BossAdrenalineMode
 {
-	public class BossAdreanlineMode : Mod
+	public class BossAdrenalineMode : Mod
 	{
 	}
 }

@@ -5,14 +5,14 @@ using Terraria.ModLoader;
 using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
-namespace BossAdreanlineMode
+namespace BossAdrenalineMode
 {
-    public class BossAdreanlineSystem : ModSystem
+    public class BossAdrenalineSystem : ModSystem
     {
-        public bool adreanline = false;
+        public bool Adrenaline = false;
         public int counter = 0;
-        public int adreanlineCounter = 0;
-        public int adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
+        public int AdrenalineCounter = 0;
+        public int AdrenalineCounterMax = BossConfig.Instance.AdrenalineCooldown;
         public bool boss = false;
         public int[] BossParts = { NPCID.EaterofWorldsHead, NPCID.EaterofWorldsBody, NPCID.EaterofWorldsTail, NPCID.Creeper, NPCID.SkeletronHand, NPCID.SkeletronHead, NPCID.WallofFleshEye, NPCID.TheDestroyer, NPCID.TheDestroyerBody, NPCID.TheDestroyerTail, NPCID.Probe, NPCID.PrimeCannon, NPCID.PrimeLaser, NPCID.PrimeSaw, NPCID.PrimeVice, NPCID.PlanterasHook, NPCID.PlanterasTentacle, NPCID.GolemFistLeft, NPCID.GolemFistRight, NPCID.GolemHead, NPCID.GolemHeadFree, NPCID.CultistBossClone, NPCID.MoonLordCore, NPCID.MoonLordHand, NPCID.MoonLordHead, NPCID.MoonLordFreeEye, NPCID.MoonLordLeechBlob };
 
@@ -28,14 +28,14 @@ namespace BossAdreanlineMode
             }
         }
 
-        public void toggleAdreanline()
+        public void toggleAdrenaline()
         {
-            if (adreanline)
+            if (Adrenaline)
             {
-                adreanlineCounterMax = BossConfig.Instance.AdreanlineDuration;
+                AdrenalineCounterMax = BossConfig.Instance.AdrenalineDuration;
             } else
             {
-                adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
+                AdrenalineCounterMax = BossConfig.Instance.AdrenalineCooldown;
             }
 
 
@@ -61,37 +61,37 @@ namespace BossAdreanlineMode
                 counter++;
                 if (counter >= 60)
                 {
-                    adreanlineCounter++;
+                    AdrenalineCounter++;
                     counter = 0;
                 }
 
-                if (adreanlineCounter > adreanlineCounterMax)
+                if (AdrenalineCounter > AdrenalineCounterMax)
                 {
-                    if (adreanline == false)
+                    if (Adrenaline == false)
                     {
-                        Talk(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineEnabled"), new Color(255, 0, 0));
-                        adreanline = true;
-                        adreanlineCounterMax = BossConfig.Instance.AdreanlineDuration;
+                        Talk(Language.GetTextValue("Mods.BossAdrenalineMode.Chat.AdrenalineEnabled"), new Color(255, 0, 0));
+                        Adrenaline = true;
+                        AdrenalineCounterMax = BossConfig.Instance.AdrenalineDuration;
                     } else
                     {
-                        Talk(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdreanlineDisabled"), new Color(0, 225, 0));
-                        adreanline = false;
-                        adreanlineCounterMax = BossConfig.Instance.AdreanlineCooldown;
+                        Talk(Language.GetTextValue("Mods.BossAdrenalineMode.Chat.AdrenalineDisabled"), new Color(0, 225, 0));
+                        Adrenaline = false;
+                        AdrenalineCounterMax = BossConfig.Instance.AdrenalineCooldown;
                     }
-                    adreanlineCounter = 0;
+                    AdrenalineCounter = 0;
                 }
             }
             else
             {
                 counter = 0;
-                adreanlineCounter = 0;
-                adreanline = false;
+                AdrenalineCounter = 0;
+                Adrenaline = false;
             }
         }
 
         public override void PostUpdateWorld()
         {
-            toggleAdreanline();
+            toggleAdrenaline();
             base.PostUpdateWorld();
         }
     }

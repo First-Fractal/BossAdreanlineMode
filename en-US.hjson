@@ -1,29 +1,34 @@
 
 Mods: {
-	BossAdreanlineMode: {
+	BossAdrenalineMode: {
 		Config: {
 			Label: Config
 			Header.GeneralOptions: General Options
 
-			AdreanlineCooldown: {
-				Label: Adreanline Cooldown
-				Tooltip: change low long it will take to adreanline to kick in, in seconds.
+			AdrenalineCooldown: {
+				Label: Adrenaline Cooldown
+				Tooltip: change low long it will take to Adrenaline to kick in, in seconds.
 			}
 
-			AdreanlineDuration: {
-				Label: Adreanline Duration
-				Tooltip: Change how long the adreanline is in effect, in seconds.
+			AdrenalineDuration: {
+				Label: Adrenaline Duration
+				Tooltip: Change how long the Adrenaline is in effect, in seconds.
 			}
 
-			AdreanlineMulti: {
-				Label: Adreanline multiplier
-				Tooltip: Change how much speed does adrealine affects the boss.
+			AdrenalineMulti: {
+				Label: Adrenaline multiplier
+				Tooltip: Change how much speed does adrenaline affects the boss.
+			}
+
+			ForceEOLToStayNearby: {
+				Label: Force Empress of Light to Stay Nearby
+				Tooltip: During Empress of Light adrenaline phase, the game will force her to stay nearby the player so she won't despawn.
 			}
 		}
 
 		Chat: {
-			AdreanlineEnabled: The adrealine has been enabled.
-			AdreanlineDisabled: The adrealine has been disabled.
+			AdrenalineEnabled: The adrealine has been enabled.
+			AdrenalineDisabled: The adrealine has been disabled.
 		}
 	}
 }

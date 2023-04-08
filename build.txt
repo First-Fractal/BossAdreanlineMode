@@ -1,3 +1,3 @@
-displayName = Boss Adreanline Mode
+displayName = Boss Adrenaline Mode
 author = First Fractal
-version = 1.2
+version = 1.3

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using Terraria.ModLoader.Config;
+using Terraria.ModLoader.IO;
 
-namespace BossAdreanlineMode
+namespace BossAdrenalineMode
 {
-    [Label("$Mods.BossAdreanlineMode.Config.Label")]
+    [Label("$Mods.BossAdrenalineMode.Config.Label")]
     public class BossConfig : ModConfig
     {
         public override ConfigScope Mode => ConfigScope.ServerSide;
@@ -12,22 +13,27 @@ namespace BossAdreanlineMode
         // Automatically set by tModLoader
         public static BossConfig Instance;
 
-        [Header("$Mods.BossAdreanlineMode.Config.Header.GeneralOptions")]
+        [Header("$Mods.BossAdrenalineMode.Config.Header.GeneralOptions")]
 
-        [Label("$Mods.BossAdreanlineMode.Config.AdreanlineCooldown.Label")]
-        [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineCooldown.Tooltip")]
+        [Label("$Mods.BossAdrenalineMode.Config.AdrenalineCooldown.Label")]
+        [Tooltip("$Mods.BossAdrenalineMode.Config.AdrenalineCooldown.Tooltip")]
         [DefaultValue(20)]
-        public int AdreanlineCooldown;
+        public int AdrenalineCooldown;
 
-        [Label("$Mods.BossAdreanlineMode.Config.AdreanlineDuration.Label")]
-        [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineDuration.Tooltip")]
+        [Label("$Mods.BossAdrenalineMode.Config.AdrenalineDuration.Label")]
+        [Tooltip("$Mods.BossAdrenalineMode.Config.AdrenalineDuration.Tooltip")]
         [DefaultValue(20)]
-        public int AdreanlineDuration;
+        public int AdrenalineDuration;
 
-        [Label("$Mods.BossAdreanlineMode.Config.AdreanlineMulti.Label")]
-        [Tooltip("$Mods.BossAdreanlineMode.Config.AdreanlineMulti.Tooltip")]
+        [Label("$Mods.BossAdrenalineMode.Config.AdrenalineMulti.Label")]
+        [Tooltip("$Mods.BossAdrenalineMode.Config.AdrenalineMulti.Tooltip")]
         [DefaultValue(1.5f)]
         [Range(1f, 3f)]
-        public float AdreanlineMulti;
+        public float AdrenalineMulti;
+
+        [Label("$Mods.BossAdrenalineMode.Config.ForceEOLToStayNearby.Label")]
+        [Tooltip("$Mods.BossAdrenalineMode.Config.ForceEOLToStayNearby.Tooltip")]
+        [DefaultValue(true)]
+        public bool ForceEOLToStayNearby;
     }
 }
