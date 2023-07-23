@@ -20,9 +20,9 @@ Mods: {
 				Tooltip: Change how much speed does adrenaline affects the boss.
 			}
 
-			ForceEOLToStayNearby: {
-				Label: Force Empress of Light to Stay Nearby
-				Tooltip: During Empress of Light adrenaline phase, the game will force her to stay nearby the player so she won't despawn.
+			HorzontalBossMoveFix: {
+				Label: Horzontal Boss Move Fix
+				Tooltip: For the bosses that move horzontally, then they are forced to stay nearby the player.
 			}
 		}
 

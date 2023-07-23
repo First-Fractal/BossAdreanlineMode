@@ -31,9 +31,9 @@ namespace BossAdrenalineMode
         [Range(1f, 3f)]
         public float AdrenalineMulti;
 
-        [Label("$Mods.BossAdrenalineMode.Config.ForceEOLToStayNearby.Label")]
-        [Tooltip("$Mods.BossAdrenalineMode.Config.ForceEOLToStayNearby.Tooltip")]
+        [Label("$Mods.BossAdrenalineMode.Config.HorzontalBossMoveFix.Label")]
+        [Tooltip("$Mods.BossAdrenalineMode.Config.HorzontalBossMoveFix.Tooltip")]
         [DefaultValue(true)]
-        public bool ForceEOLToStayNearby;
+        public bool HorzontalBossMoveFix;
     }
 }
