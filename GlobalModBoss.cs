@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.UI.ModBrowser;
 
-namespace BossAdrenalineMode
+namespace BossAdreanlineMode
 {
     public class GlobalModBoss : GlobalNPC
     {

@@ -3,9 +3,9 @@ using System.ComponentModel;
 using Terraria.ModLoader.Config;
 using Terraria.ModLoader.IO;
 
-namespace BossAdrenalineMode
+namespace BossAdreanlineMode
 {
-    [Label("$Mods.BossAdrenalineMode.Config.Label")]
+    [Label("$Mods.BossAdreanlineMode.Config.Label")]
     public class BossConfig : ModConfig
     {
         public override ConfigScope Mode => ConfigScope.ServerSide;
@@ -13,26 +13,26 @@ namespace BossAdrenalineMode
         // Automatically set by tModLoader
         public static BossConfig Instance;
 
-        [Header("$Mods.BossAdrenalineMode.Config.Header.GeneralOptions")]
+        [Header("$Mods.BossAdreanlineMode.Config.Header.GeneralOptions")]
 
-        [Label("$Mods.BossAdrenalineMode.Config.AdrenalineCooldown.Label")]
-        [Tooltip("$Mods.BossAdrenalineMode.Config.AdrenalineCooldown.Tooltip")]
+        [Label("$Mods.BossAdreanlineMode.Config.AdrenalineCooldown.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.Config.AdrenalineCooldown.Tooltip")]
         [DefaultValue(20)]
         public int AdrenalineCooldown;
 
-        [Label("$Mods.BossAdrenalineMode.Config.AdrenalineDuration.Label")]
-        [Tooltip("$Mods.BossAdrenalineMode.Config.AdrenalineDuration.Tooltip")]
+        [Label("$Mods.BossAdreanlineMode.Config.AdrenalineDuration.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.Config.AdrenalineDuration.Tooltip")]
         [DefaultValue(20)]
         public int AdrenalineDuration;
 
-        [Label("$Mods.BossAdrenalineMode.Config.AdrenalineMulti.Label")]
-        [Tooltip("$Mods.BossAdrenalineMode.Config.AdrenalineMulti.Tooltip")]
+        [Label("$Mods.BossAdreanlineMode.Config.AdrenalineMulti.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.Config.AdrenalineMulti.Tooltip")]
         [DefaultValue(1.5f)]
         [Range(1f, 3f)]
         public float AdrenalineMulti;
 
-        [Label("$Mods.BossAdrenalineMode.Config.HorzontalBossMoveFix.Label")]
-        [Tooltip("$Mods.BossAdrenalineMode.Config.HorzontalBossMoveFix.Tooltip")]
+        [Label("$Mods.BossAdreanlineMode.Config.HorzontalBossMoveFix.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.Config.HorzontalBossMoveFix.Tooltip")]
         [DefaultValue(true)]
         public bool HorzontalBossMoveFix;
     }

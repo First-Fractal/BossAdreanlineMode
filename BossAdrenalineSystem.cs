@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
-namespace BossAdrenalineMode
+namespace BossAdreanlineMode
 {
     public class BossAdrenalineSystem : ModSystem
     {
@@ -69,12 +69,12 @@ namespace BossAdrenalineMode
                 {
                     if (Adrenaline == false)
                     {
-                        Talk(Language.GetTextValue("Mods.BossAdrenalineMode.Chat.AdrenalineEnabled"), new Color(255, 0, 0));
+                        Talk(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdrenalineEnabled"), new Color(255, 0, 0));
                         Adrenaline = true;
                         AdrenalineCounterMax = BossConfig.Instance.AdrenalineDuration;
                     } else
                     {
-                        Talk(Language.GetTextValue("Mods.BossAdrenalineMode.Chat.AdrenalineDisabled"), new Color(0, 225, 0));
+                        Talk(Language.GetTextValue("Mods.BossAdreanlineMode.Chat.AdrenalineDisabled"), new Color(0, 225, 0));
                         Adrenaline = false;
                         AdrenalineCounterMax = BossConfig.Instance.AdrenalineCooldown;
                     }

@@ -1,6 +1,6 @@
 
 Mods: {
-	BossAdrenalineMode: {
+	BossAdreanlineMode: {
 		Config: {
 			Label: Config
 			Header.GeneralOptions: General Options
