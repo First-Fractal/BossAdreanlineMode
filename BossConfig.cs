@@ -31,6 +31,11 @@ namespace BossAdreanlineMode
         [Range(1f, 3f)]
         public float AdrenalineMulti;
 
+        [Label("$Mods.BossAdreanlineMode.Config.DisableBossDespawn.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.Config.DisableBossDespawn.Tooltip")]
+        [DefaultValue(true)]
+        public bool DisableBossDespawn;
+
         [Label("$Mods.BossAdreanlineMode.Config.HorzontalBossMoveFix.Label")]
         [Tooltip("$Mods.BossAdreanlineMode.Config.HorzontalBossMoveFix.Tooltip")]
         [DefaultValue(true)]

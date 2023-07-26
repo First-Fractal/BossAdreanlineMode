@@ -24,6 +24,11 @@ Mods: {
 				Label: Horzontal Boss Move Fix
 				Tooltip: For the bosses that move horzontally, then they are forced to stay nearby the player.
 			}
+
+			DisableBossDespawn: {
+				Label: Disable Boss Despawn
+				Tooltip: Disable the ablility for bosses to despawn due to adrenaline despawning some bosses.
+			}
 		}
 
 		Chat: {

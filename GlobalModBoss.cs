@@ -2,7 +2,6 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.ModLoader.UI.ModBrowser;
 
 namespace BossAdreanlineMode
 {
@@ -12,15 +11,14 @@ namespace BossAdreanlineMode
 
         public override void PostAI(NPC npc)
         {
-            npc.DoesntDespawnToInactivity();
-            npc.DiscourageDespawn(9999);
-
             bool Adrenaline = ModContent.GetInstance<BossAdrenalineSystem>().Adrenaline;
             int[] BossParts = ModContent.GetInstance<BossAdrenalineSystem>().BossParts;
+            bool boss = false;
             if (Adrenaline)
             {
                 if (npc.boss && npc.active)
                 {
+                    boss = true;
                     speed = true;
                 }
 
@@ -28,7 +26,36 @@ namespace BossAdreanlineMode
                 {
                     if (npc.type == bossPart && npc.active)
                     {
+                        boss = true;
                         speed = true;
+                    }
+                }
+
+                if (boss)
+                {
+                    if (BossConfig.Instance.DisableBossDespawn)
+                    {
+                        foreach (Player player in Main.player)
+                        {
+                            bool someoneAlive = false;
+                            if (player.active && !player.dead)
+                            {
+                                someoneAlive = true;
+                            }
+
+                            if (someoneAlive)
+                            {
+                                if (npc.Distance(Main.player[npc.target].position) < 3000)
+                                {
+                                    npc.DoesntDespawnToInactivity();
+                                    npc.DiscourageDespawn(9999);
+                                } else if (Main.dayTime && (npc.type == NPCID.EyeofCthulhu || npc.type == NPCID.Retinazer || npc.type == NPCID.Spazmatism || npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail || npc.type == NPCID.SkeletronPrime || npc.type == NPCID.PrimeCannon || npc.type == NPCID.PrimeLaser || npc.type == NPCID.PrimeSaw || npc.type == NPCID.PrimeVice))
+                                {
+                                    npc.DoesntDespawnToInactivity();
+                                    npc.DiscourageDespawn(55);
+                                }
+                            }
+                        }
                     }
                 }
 
