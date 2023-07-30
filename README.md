@@ -9,6 +9,7 @@ If you are a Terraria Content Creator that is going to use this mod, please give
 [Download it here](https://steamcommunity.com/sharedfiles/filedetails/?id=2952321754)
 
 # Change Log
+v 1.5: Add in a adrenaline bar to display the duration of adrenaline. Note that the bar will only show up when a boss is currently alive. 
 v 1.4.1: fixed some bugs with the despawning
 v 1.4: Force every boss to not despawn
 v.1.3: added a "duct tape" method of forcing Empress of Light to not despawn, and a fix some spelling mistakes that I missed cause I'm blind.

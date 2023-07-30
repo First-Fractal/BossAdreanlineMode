@@ -41,4 +41,33 @@ namespace BossAdreanlineMode
         [DefaultValue(true)]
         public bool HorzontalBossMoveFix;
     }
+
+    [Label("$Mods.BossAdreanlineMode.BossGUI.Label")]
+    public class BossGUIConfig : ModConfig
+    {
+        public override ConfigScope Mode => ConfigScope.ClientSide;
+        // Automatically set by tModLoader
+        public static BossGUIConfig Instance;
+
+        [Header("$Mods.BossAdreanlineMode.BossGUI.Header.GeneralOptions")]
+
+        [Label("$Mods.BossAdreanlineMode.BossGUI.DisplayBar.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.BossGUI.DisplayBar.Tooltip")]
+        [DefaultValue(true)]
+        public bool DisplayBar;
+
+        [Label("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarX.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarX.Tooltip")]
+        [DefaultValue(50)]
+        [Slider()]
+        [Range(0, 100)]
+        public int AdreanlineBarX;
+
+        [Label("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarY.Label")]
+        [Tooltip("$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarY.Tooltip")]
+        [DefaultValue(3)]
+        [Slider()]
+        [Range(0, 100)]
+        public int AdreanlineBarY;
+    }
 }

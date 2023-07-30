@@ -31,6 +31,28 @@ Mods: {
 			}
 		}
 
+		BossGUI: {
+			Label: "GUI Config"
+			Header: {
+				GeneralOptions: "GUI Options"
+			}
+
+			DisplayBar: {
+				Label: "Display Adrenaline Bar?"
+				Tooltip: "Should the adrenaline bar should be visible? \nNote that it would only be visible while a boss is alive."
+			}
+
+			AdreanlineBarX: {
+				Label: "Adreanline Bar X %"
+				Tooltip: "Set the X % of the adreanline bar."
+			}
+
+			AdreanlineBarY: {
+				Label: "Adreanline Bar Y %"
+				Tooltip: "Set the Y % of the adreanline bar."
+			}
+		}
+
 		Chat: {
 			AdrenalineEnabled: The adrealine has been enabled.
 			AdrenalineDisabled: The adrealine has been disabled.

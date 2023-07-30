@@ -9,7 +9,7 @@ namespace BossAdreanlineMode
     {
         static bool speed = false;
 
-        public override void PostAI(NPC npc)
+        public override bool PreAI(NPC npc)
         {
             bool Adrenaline = ModContent.GetInstance<BossAdrenalineSystem>().Adrenaline;
             int[] BossParts = ModContent.GetInstance<BossAdrenalineSystem>().BossParts;
@@ -45,11 +45,16 @@ namespace BossAdreanlineMode
 
                             if (someoneAlive)
                             {
-                                if (npc.Distance(Main.player[npc.target].position) < 3000)
+                                if (npc.Distance(Main.player[npc.target].position) < 6000)
                                 {
                                     npc.DoesntDespawnToInactivity();
                                     npc.DiscourageDespawn(9999);
-                                } else if (Main.dayTime && (npc.type == NPCID.EyeofCthulhu || npc.type == NPCID.Retinazer || npc.type == NPCID.Spazmatism || npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail || npc.type == NPCID.SkeletronPrime || npc.type == NPCID.PrimeCannon || npc.type == NPCID.PrimeLaser || npc.type == NPCID.PrimeSaw || npc.type == NPCID.PrimeVice))
+                                } else if (npc.Distance(Main.player[npc.target].position) < 12000 && npc.type == NPCID.Skeleton)
+                                {
+                                    npc.DoesntDespawnToInactivity();
+                                    npc.DiscourageDespawn(9999);
+                                }
+                                else if (Main.dayTime && (npc.type == NPCID.EyeofCthulhu || npc.type == NPCID.Retinazer || npc.type == NPCID.Spazmatism || npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail || npc.type == NPCID.SkeletronPrime || npc.type == NPCID.PrimeCannon || npc.type == NPCID.PrimeLaser || npc.type == NPCID.PrimeSaw || npc.type == NPCID.PrimeVice))
                                 {
                                     npc.DoesntDespawnToInactivity();
                                     npc.DiscourageDespawn(55);
@@ -92,12 +97,12 @@ namespace BossAdreanlineMode
                     npc.netUpdate = true;
                     if (Main.netMode == NetmodeID.Server && --npc.netSpam < 0)
                     {
-                        npc.netSpam = 5;
+                        npc.netSpam = 2;
                         NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, npc.whoAmI);
                     }
                 }
             }
-            base.PostAI(npc);
+            return base.PreAI(npc);
         }
     }
 }

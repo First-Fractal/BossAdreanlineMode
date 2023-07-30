@@ -58,12 +58,6 @@ namespace BossAdreanlineMode
 
             if (boss)
             {
-                counter++;
-                if (counter >= 60)
-                {
-                    AdrenalineCounter++;
-                    counter = 0;
-                }
 
                 if (AdrenalineCounter > AdrenalineCounterMax)
                 {
@@ -79,6 +73,23 @@ namespace BossAdreanlineMode
                         AdrenalineCounterMax = BossConfig.Instance.AdrenalineCooldown;
                     }
                     AdrenalineCounter = 0;
+                }
+
+                counter++;
+                if (counter >= 60)
+                {
+                    AdrenalineCounter++;
+                    counter = 0;
+
+                    if (Main.netMode != NetmodeID.SinglePlayer)
+                    {
+                        ModPacket packet = ModContent.GetInstance<BossAdreanlineMode>().GetPacket();
+                        packet.Write(boss);
+                        packet.Write(Adrenaline);
+                        packet.Write(AdrenalineCounter);
+                        packet.Write(AdrenalineCounterMax);
+                        packet.Send();
+                    }
                 }
             }
             else
