@@ -1,4 +1,3 @@
-
 Mods: {
 	BossAdreanlineMode: {
 		Config: {
@@ -32,30 +31,82 @@ Mods: {
 		}
 
 		BossGUI: {
-			Label: "GUI Config"
-			Header: {
-				GeneralOptions: "GUI Options"
-			}
+			Label: GUI Config
+			Header.GeneralOptions: GUI Options
 
 			DisplayBar: {
-				Label: "Display Adrenaline Bar?"
-				Tooltip: "Should the adrenaline bar should be visible? \nNote that it would only be visible while a boss is alive."
+				Label: Display Adrenaline Bar?
+				Tooltip:
+					'''
+					Should the adrenaline bar should be visible? 
+					Note that it would only be visible while a boss is alive.
+					'''
 			}
 
 			AdreanlineBarX: {
-				Label: "Adreanline Bar X %"
-				Tooltip: "Set the X % of the adreanline bar."
+				Label: Adreanline Bar X %
+				Tooltip: Set the X % of the adreanline bar.
 			}
 
 			AdreanlineBarY: {
-				Label: "Adreanline Bar Y %"
-				Tooltip: "Set the Y % of the adreanline bar."
+				Label: Adreanline Bar Y %
+				Tooltip: Set the Y % of the adreanline bar.
 			}
 		}
 
 		Chat: {
 			AdrenalineEnabled: The adrealine has been enabled.
 			AdrenalineDisabled: The adrealine has been disabled.
+		}
+
+		Configs: {
+			BossGUIConfig: {
+				AdreanlineBarY: {
+					Tooltip: "{$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarY.Tooltip}"
+					Label: "{$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarY.Label}"
+				}
+
+				AdreanlineBarX: {
+					Tooltip: "{$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarX.Tooltip}"
+					Label: "{$Mods.BossAdreanlineMode.BossGUI.AdreanlineBarX.Label}"
+				}
+
+				DisplayBar: {
+					Tooltip: "{$Mods.BossAdreanlineMode.BossGUI.DisplayBar.Tooltip}"
+					Label: "{$Mods.BossAdreanlineMode.BossGUI.DisplayBar.Label}"
+				}
+
+				DisplayName: "{$Mods.BossAdreanlineMode.BossGUI.Label}"
+			}
+
+			BossConfig: {
+				HorzontalBossMoveFix: {
+					Tooltip: "{$Mods.BossAdreanlineMode.Config.HorzontalBossMoveFix.Tooltip}"
+					Label: "{$Mods.BossAdreanlineMode.Config.HorzontalBossMoveFix.Label}"
+				}
+
+				DisableBossDespawn: {
+					Tooltip: "{$Mods.BossAdreanlineMode.Config.DisableBossDespawn.Tooltip}"
+					Label: "{$Mods.BossAdreanlineMode.Config.DisableBossDespawn.Label}"
+				}
+
+				AdrenalineMulti: {
+					Tooltip: "{$Mods.BossAdreanlineMode.Config.AdrenalineMulti.Tooltip}"
+					Label: "{$Mods.BossAdreanlineMode.Config.AdrenalineMulti.Label}"
+				}
+
+				AdrenalineDuration: {
+					Tooltip: "{$Mods.BossAdreanlineMode.Config.AdrenalineDuration.Tooltip}"
+					Label: "{$Mods.BossAdreanlineMode.Config.AdrenalineDuration.Label}"
+				}
+
+				AdrenalineCooldown: {
+					Tooltip: "{$Mods.BossAdreanlineMode.Config.AdrenalineCooldown.Tooltip}"
+					Label: "{$Mods.BossAdreanlineMode.Config.AdrenalineCooldown.Label}"
+				}
+
+				DisplayName: "{$Mods.BossAdreanlineMode.Config.Label}"
+			}
 		}
 	}
 }

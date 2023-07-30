@@ -5,6 +5,8 @@ If you are a Terraria Content Creator that is going to use this mod, please give
 
 Change Log
 ---------------------------------------
+v 1.5.1:
+Ported to 1.4.4.
 v 1.5: Add in a adrenaline bar to display the duration of adrenaline. Note that the bar will only show up when a boss is currently alive. 
 v 1.4.1: fixed some bugs with the despawning
 v 1.4: Force every boss to not despawn
