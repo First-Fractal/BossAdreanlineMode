@@ -86,6 +86,8 @@ namespace BossAdrenalineMode
 
             //value for seeing how much of the bar should be filled
             float quotient = 0;
+
+            //get the instance of the system and the player
             BossAdrenalineSystem system = ModContent.GetInstance<BossAdrenalineSystem>();
             BossAdrenalinePlayer player = Main.LocalPlayer.GetModPlayer<BossAdrenalinePlayer>();
 
