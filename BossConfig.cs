@@ -8,6 +8,7 @@ namespace BossAdreanlineMode
     [Label("$Mods.BossAdreanlineMode.Config.Label")]
     public class BossConfig : ModConfig
     {
+        //make the config only work on non server side
         public override ConfigScope Mode => ConfigScope.ServerSide;
 
         // Automatically set by tModLoader
