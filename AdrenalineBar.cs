@@ -100,8 +100,8 @@ namespace BossAdrenalineMode
             {
                 quotient = (float)player.adrenalineCounter / player.adrenalineCounterMax;
             }
-            
-            //make sure that the quituent dosn't overfill
+
+            //make sure that the quotient dosn't overfill
             quotient = Utils.Clamp(quotient, 0f, 1f);
 
             //move the bar slightly away from the border of the bar
