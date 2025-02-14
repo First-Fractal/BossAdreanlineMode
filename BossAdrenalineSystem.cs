@@ -4,6 +4,7 @@ using Terraria.Chat;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using Microsoft.Xna.Framework;
+using System.IO;
 
 namespace BossAdreanlineMode
 {
@@ -16,7 +17,7 @@ namespace BossAdreanlineMode
         public int AdrenalineCounterMax = BossConfig.Instance.AdrenalineCooldown;
 
         //flag for boss is alive
-        public bool boss = false;
+        public static bool boss = false;
 
         //list of boss parts
         public int[] BossParts = { NPCID.EaterofWorldsHead, NPCID.EaterofWorldsBody, NPCID.EaterofWorldsTail, NPCID.Creeper, NPCID.SkeletronHand, NPCID.SkeletronHead, NPCID.WallofFleshEye, NPCID.TheDestroyer, NPCID.TheDestroyerBody, NPCID.TheDestroyerTail, NPCID.Probe, NPCID.PrimeCannon, NPCID.PrimeLaser, NPCID.PrimeSaw, NPCID.PrimeVice, NPCID.PlanterasHook, NPCID.PlanterasTentacle, NPCID.GolemFistLeft, NPCID.GolemFistRight, NPCID.GolemHead, NPCID.GolemHeadFree, NPCID.CultistBossClone, NPCID.MoonLordCore, NPCID.MoonLordHand, NPCID.MoonLordHead, NPCID.MoonLordFreeEye, NPCID.MoonLordLeechBlob };
@@ -119,22 +120,6 @@ namespace BossAdreanlineMode
 
                     //reset the tick counter
                     counter = 0;
-
-                    //check if it is not singeplayer
-                    if (Main.netMode != NetmodeID.SinglePlayer)
-                    {
-                        //create a new network packet
-                        ModPacket packet = ModContent.GetInstance<BossAdreanlineMode>().GetPacket();
-
-                        //insert all of that values into the packet
-                        packet.Write(boss);
-                        packet.Write(Adrenaline);
-                        packet.Write(AdrenalineCounter);
-                        packet.Write(AdrenalineCounterMax);
-
-                        //send the packet
-                        packet.Send();
-                    }
                 }
             }
             else
@@ -144,6 +129,11 @@ namespace BossAdreanlineMode
                 AdrenalineCounter = 0;
                 Adrenaline = false;
             }
+
+            if (Main.dedServ)
+            {
+                NetMessage.SendData(MessageID.WorldData);
+            }
         }
         
         //run the toggle adrenaline script after every tick has passed in the world
@@ -151,6 +141,27 @@ namespace BossAdreanlineMode
         {
             toggleAdrenaline();
             base.PostUpdateWorld();
+        }
+
+        public override void NetSend(BinaryWriter writer)
+        {
+            writer.Write(boss);
+            writer.Write(Adrenaline);
+            writer.Write(AdrenalineCounter);
+            writer.Write(AdrenalineCounterMax);
+
+            
+            base.NetSend(writer);
+        }
+
+        public override void NetReceive(BinaryReader reader)
+        {
+            boss = reader.ReadBoolean();
+            Adrenaline = reader.ReadBoolean();
+            AdrenalineCounter = reader.ReadInt32();
+            AdrenalineCounterMax = reader.ReadInt32();
+
+            base.NetReceive(reader);
         }
     }
 }

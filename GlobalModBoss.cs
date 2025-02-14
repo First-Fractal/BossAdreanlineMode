@@ -10,7 +10,7 @@ namespace BossAdreanlineMode
         //flag for if the speed should be enabled
         static bool speed = false;
 
-        public override bool PreAI(NPC npc)
+        public override void PostAI(NPC npc)
         {
             //check if the adrenaline is enabled
             bool Adrenaline = ModContent.GetInstance<BossAdrenalineSystem>().Adrenaline;
@@ -129,16 +129,9 @@ namespace BossAdreanlineMode
                     
                     //tell TML to sync the npc AI
                     npc.netUpdate = true;
-
-                    //make sure to sync the data with everyone else (may or may not stolen this from fargo ;| )
-                    if (Main.netMode == NetmodeID.Server && --npc.netSpam < 0)
-                    {
-                        npc.netSpam = 2;
-                        NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, npc.whoAmI);
-                    }
                 }
             }
-            return base.PreAI(npc);
+            base.PostAI(npc);
         }
     }
 }

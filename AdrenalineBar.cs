@@ -50,16 +50,13 @@ namespace BossAdrenalineMode
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            Main.NewText(BossAdrenalineSystem.boss.ToString());
+
             //check if the bar should be displayed
             if (BossGUIConfig.Instance.DisplayBar)
             {
                 //check if there is no boss from the singeplayer way, and don't draw the bar
-                if (Main.netMode == NetmodeID.SinglePlayer && ModContent.GetInstance<BossAdrenalineSystem>().boss == false)
-                {
-                    return;
-                }
-                //check if there is no boss from the multiplayer client way, and don't draw the bar
-                else if (Main.netMode == NetmodeID.MultiplayerClient && Main.LocalPlayer.GetModPlayer<BossAdrenalinePlayer>().boss == false)
+                if (BossAdrenalineSystem.boss == false)
                 {
                     return;
                 }
@@ -89,17 +86,9 @@ namespace BossAdrenalineMode
 
             //get the instance of the system and the player
             BossAdrenalineSystem system = ModContent.GetInstance<BossAdrenalineSystem>();
-            BossAdrenalinePlayer player = Main.LocalPlayer.GetModPlayer<BossAdrenalinePlayer>();
 
             //calculate how much of the bar to fill out
-            if (Main.netMode == NetmodeID.SinglePlayer)
-            {
-                quotient = (float)system.AdrenalineCounter / system.AdrenalineCounterMax;
-            }
-            else
-            {
-                quotient = (float)player.adrenalineCounter / player.adrenalineCounterMax;
-            }
+            quotient = (float)system.AdrenalineCounter / system.AdrenalineCounterMax;
 
             //make sure that the quotient dosn't overfill
             quotient = Utils.Clamp(quotient, 0f, 1f);
@@ -118,15 +107,7 @@ namespace BossAdrenalineMode
             bool adren = false;
 
             //check the status of adrenaline
-            if (Main.netMode == NetmodeID.SinglePlayer)
-            {
-                adren = system.Adrenaline;
-            }
-            //check the status of adrenaline
-            if (Main.netMode == NetmodeID.MultiplayerClient)
-            {
-                adren = player.adrenaline;
-            }
+            adren = system.Adrenaline;
 
             //change the color of the bar based on adrenaline state
             if (adren)
