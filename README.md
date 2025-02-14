@@ -6,6 +6,7 @@ Everything about this mod that you need to tweak is configurable.
 [Download it here](https://steamcommunity.com/sharedfiles/filedetails/?id=2952321754)
 
 # Change Log
+v 1.5.2.1: forgot to remove debug text
 v 1.5.2: fixed some desync bugs in multiplayer
 v 1.5.1: Ported to 1.4.4.
 v 1.5: Add in a adrenaline bar to display the duration of adrenaline. Note that the bar will only show up when a boss is currently alive. 

@@ -50,8 +50,6 @@ namespace BossAdrenalineMode
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            Main.NewText(BossAdrenalineSystem.boss.ToString());
-
             //check if the bar should be displayed
             if (BossGUIConfig.Instance.DisplayBar)
             {
